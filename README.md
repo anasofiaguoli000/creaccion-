@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SuperMarket Express</title>
+
+    <style>
+
+        /* ESTILO GENERAL */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f9ef;
+            color: #246b3a;
+        }
+
+        /* ENCABEZADO */
+
+        header {
+            background-color: white;
+            text-align: center;
+            padding: 25px;
+            box-shadow: 0 3px 10px #0002;
+        }
+
+        header h1 {
+            color: #299447;
+            font-size: 38px;
+            margin: 0;
+        }
+
+        header p {
+            color: #e5b900;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* MENU */
+
+        nav {
+            background-color: #299447;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+        nav a:hover {
+            color: #ffd329;
+        }
+
+        /* CONTENEDOR */
+
+        .contenedor {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* TITULOS */
+
+        h2 {
+            text-align: center;
+            color: #299447;
+            font-size: 32px;
+            margin-top: 45px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* IMAGENES */
+
+        .imagen {
+            background-color: white;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px #0002;
+            text-align: center;
+        }
+
+        .imagen img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* BOTONES */
+
+        .boton {
+            display: inline-block;
+            background-color: #ffd329;
+            color: #216337;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 15px;
+        }
+
+        .boton:hover {
+            background-color: #eab900;
+        }
+
+        /* VIDEO */
+
+        .video {
+            background-color: white;
+            padding: 25px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px #0002;
+            text-align: center;
+        }
+
+        .video video {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 15px;
+        }
+
+        /* TABLAS */
+
+        .tabla {
+            background-color: white;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px #0002;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #299447;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 13px;
+            text-align: center;
+            border: 1px solid #dddddd;
+        }
+
+        tr:hover {
+            background-color: #eff8ea;
+        }
+
+        /* DOMICILIOS */
+
+        .domicilios {
+            background-color: #299447;
+            color: white;
+            text-align: center;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .domicilios h2 {
+            color: #ffd329;
+        }
+
+        .domicilios p {
+            font-size: 20px;
+        }
+
+        /* DESCRIPCION */
+
+        .descripcion {
+            background-color: white;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px #0002;
+        }
+
+        .descripcion p {
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        .descripcion li {
+            margin: 12px;
+            font-size: 17px;
+        }
+
+        /* PIE DE PAGINA */
+
+        footer {
+            background-color: #174d2d;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer h2 {
+            color: white;
+            margin-top: 0;
+        }
+
+        footer span {
+            color: #ffd329;
+        }
+
+        /* PARA CELULARES */
+
+        @media (max-width: 700px) {
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses', 'Profit'],
+          ['2014', 1000, 400, 200],
+          ['2015', 1170, 460, 250],
+          ['2016', 660, 1120, 300],
+          ['2017', 1030, 540, 350]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+
+</head>
+
+
+<body>
+
+
+<!-- ENCABEZADO -->
+
+<header>
+
+    <h1>SuperMarket Express</h1>
+
+    <p>Todo lo que necesitas, directo a tu puerta</p>
+
+</header>
+
+
+<!-- MENU -->
+
+<nav>
+
+    <a href="#inicio">Inicio</a>
+
+    <a href="#frutas">Frutas</a>
+
+    <a href="#verduras">Verduras</a>
+
+    <a href="#promociones">Promociones</a>
+
+    <a href="#video">Video</a>
+
+    <a href="#datos">Datos</a>
+
+</nav>
+
+
+<div class="contenedor">
+
+
+<!-- ========================= -->
+<!-- IMAGEN 1 -->
+<!-- ========================= -->
+
+<section id="inicio">
+
+    <h2>Bienvenidos a SuperMarket Express</h2>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen1.png"
+             alt="Portada de SuperMarket Express">
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMAGEN 2 -->
+<!-- ========================= -->
+
+<section id="frutas">
+
+    <h2>Sección de frutas</h2>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen2.png"
+             alt="Sección de frutas">
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMAGEN 3 -->
+<!-- ========================= -->
+
+<section>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen3.png"
+             alt="Frutas y precios">
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMAGEN 4 -->
+<!-- ========================= -->
+
+<section id="verduras">
+
+    <h2>Sección de verduras</h2>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen4.png"
+             alt="Sección de verduras">
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMAGEN 5 -->
+<!-- ========================= -->
+
+<section>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen5.png"
+             alt="Productos de verduras">
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMAGEN 6 -->
+<!-- ========================= -->
+
+<section id="promociones">
+
+    <h2>Promociones</h2>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen6.png"
+             alt="Promociones de SuperMarket Express">
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- IMAGEN 7 -->
+<!-- ========================= -->
+
+<section>
+
+    <div class="imagen">
+
+        <img src="imagenes/imagen7.png"
+             alt="Domicilios de SuperMarket Express">
+
+    </div>
+
+</section>
+
+
+<!-- BOTON -->
+
+<div style="text-align: center;">
+
+    <a class="boton" href="#video">
+        🎬 VER VIDEO
+    </a>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- VIDEO -->
+<!-- ========================= -->
+
+<section id="video">
+
+    <h2>Video de presentación</h2>
+
+    <div class="video">
+
+        <video controls>
+
+            <source src="imagenes/video.mp4"
+                    type="video/mp4">
+
+            reproduce un video.mp4 de fritas y verduras.
+
+        </video>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- TABLA 1 -->
+<!-- ========================= -->
+
+<section id="datos">
+
+    <h2>Datos del proyecto</h2>
+
+    <div class="tabla">
+
+        <h3>Distribución del contenido</h3>
+
+        <table>
+
+            <tr>
+
+                <th>Elemento</th>
+
+                <th>Porcentaje</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Productos</td>
+
+                <td>40%</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Promociones</td>
+
+                <td>20%</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Domicilios</td>
+
+                <td>20%</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Información</td>
+
+                <td>20%</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- TABLA 2 -->
+
+    <div class="tabla">
+
+        <h3>Precios de productos</h3>
+
+        <table>
+
+            <tr>
+
+                <th>Producto</th>
+
+                <th>Precio</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Manzana</td>
+
+                <td>$2.000 / unidad</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Aguacate</td>
+
+                <td>$10.000 / kg</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Carambolo</td>
+
+                <td>$5.000 / kg</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Pera</td>
+
+                <td>$2.500 / kg</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Tomate</td>
+
+                <td>$5.000 / kg</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Limón Tahití</td>
+
+                <td>$2.500 / kg</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- DOMICILIOS -->
+<!-- ========================= -->
+
+<section class="domicilios">
+
+    <h2>Domicilios 🚚</h2>
+
+    <p>
+        Recibe tus productos directamente
+        en la puerta de tu casa.
+    </p>
+
+    <p>
+        📞 (+57) 311 882 2552
+    </p>
+
+    <a class="boton"
+       href="tel:+573118822552">
+
+        PEDIR DOMICILIO
+
+    </a>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- DESCRIPCION -->
+<!-- ========================= -->
+
+
+         
+
+    </div>
+
+</section>
+
+
+</div>
+
+ <div id="columnchart_material" style="width: 900px; height: 400px; position: relative; top: 4px; left: 25% ;"></div>
+
+<!-- PIE DE PAGINA -->
+
+<footer>
+
+
+    <h2>
+        SuperMarket
+        <span>Express</span>
+    </h2>
+
+    <p>
+       “Todo lo que buscas, en un solo lugar: calidad, variedad y buenos precios, porque tu compra es nuestra prioridad.
+    </p>
+
+    <p>
+        © 2026 SuperMarket Express
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
